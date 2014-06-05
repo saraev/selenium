@@ -34,6 +34,39 @@ namespace OpenQA.Selenium
             return GetUserAgent(driver).Contains("Chrome");
         }
 
+        // todo: test this
+        public static bool IsOldChromedriver(IWebDriver driver)
+        {
+            ICapabilities caps;
+            try
+            {
+                caps = ((IHasCapabilities) driver).Capabilities;
+            }
+            catch (InvalidCastException e)
+            {
+                // Driver does not support capabilities -- not a chromedriver at all.
+                return false;
+            }
+            var chromedriverVersion = (String)caps.GetCapability("chrome.chromedriverVersion");
+            if (chromedriverVersion != null)
+            {
+                String[] versionMajorMinor = chromedriverVersion.Split('.');
+                if (versionMajorMinor.Length > 1)
+                {
+                    try
+                    {
+                        return 20 < long.Parse(versionMajorMinor[0]);
+                    }
+                    catch (FormatException e)
+                    {
+                        // First component of the version is not a number -- not a chromedriver.
+                        return false;
+                    }
+                }
+            }
+            return false;
+        }
+
         public static bool IsFirefox(IWebDriver driver)
         {
             return GetUserAgent(driver).Contains("Firefox");

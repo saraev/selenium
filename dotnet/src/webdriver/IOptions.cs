@@ -16,10 +16,9 @@
 // limitations under the License.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using OpenQA.Selenium.Logging;
 
 namespace OpenQA.Selenium
 {
@@ -45,5 +44,11 @@ namespace OpenQA.Selenium
         /// </summary>
         /// <returns>An object implementing the <see cref="ITimeouts"/> interface.</returns>
         ITimeouts Timeouts();
+
+        /// <summary>
+        /// Gets the ILogs interface used to fetch different types of logs.
+        /// </summary>
+        /// <returns>An object implementing the <see cref="ILogs"/> interface.</returns>
+        ILogs Logs();
     }
 }

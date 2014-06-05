@@ -16,11 +16,10 @@
 // limitations under the License.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using OpenQA.Selenium.Internal;
+using OpenQA.Selenium.Logging;
 
 namespace OpenQA.Selenium.Remote
 {
@@ -67,6 +66,12 @@ namespace OpenQA.Selenium.Remote
         {
             return new RemoteTimeouts(this.driver);
         }
+
+        public ILogs Logs()
+        {
+            return new RemoteLogs(this.driver);
+        }
+
         #endregion
     }
 }

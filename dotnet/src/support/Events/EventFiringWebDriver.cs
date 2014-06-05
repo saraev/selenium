@@ -22,6 +22,7 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Text;
 using OpenQA.Selenium.Internal;
+using OpenQA.Selenium.Logging;
 
 namespace OpenQA.Selenium.Support.Events
 {
@@ -904,6 +905,11 @@ namespace OpenQA.Selenium.Support.Events
             public ITimeouts Timeouts()
             {
                 return new EventFiringTimeouts(this.wrappedOptions);
+            }
+
+            public ILogs Logs()
+            {
+                return this.wrappedOptions.Logs();
             }
 
             #endregion

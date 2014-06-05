@@ -101,6 +101,11 @@
     <Compile Include="Interactions\SingleTapAction.cs" />
     <Compile Include="Interactions\TouchActions.cs" />
     <Compile Include="ITouchScreen.cs" />
+    <Compile Include="Logging\ILogs.cs" />
+    <Compile Include="Logging\Level.cs" />
+    <Compile Include="Logging\LogEntry.cs" />
+    <Compile Include="Logging\LogLevelMapping.cs" />
+    <Compile Include="Logging\LogType.cs" />
     <Compile Include="PhantomJS\CommandLineArgumentNameAttribute.cs" />
     <Compile Include="PhantomJS\PhantomJSDriver.cs" />
     <Compile Include="PhantomJS\PhantomJSDriverService.cs" />
@@ -111,6 +116,7 @@
     <Compile Include="Remote\JsonConverters\PlatformJsonConverter.cs" />
     <Compile Include="Remote\JsonConverters\ResponseValueJsonConverter.cs" />
     <Compile Include="Remote\LocalFileDetector.cs" />
+    <Compile Include="Remote\RemoteLogs.cs" />
     <Compile Include="Remote\RemoteTouchScreen.cs" />
     <Compile Include="Safari\SafariDriverExtension.cs" />
     <Compile Include="Safari\SafariOptions.cs" />

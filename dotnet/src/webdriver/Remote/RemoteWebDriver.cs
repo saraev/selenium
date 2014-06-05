@@ -21,8 +21,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Interactions.Internal;
 using OpenQA.Selenium.Internal;
 
 namespace OpenQA.Selenium.Remote
